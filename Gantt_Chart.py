@@ -231,7 +231,7 @@ def M2_gurobi_gantt(model, p, J, m):
 
     # Cj 기반으로 스케줄 구성
     for v in model.getVars():
-        if v.x >= 1e-6 and v.varName[0] == 'C' and v.varName.split("_")[2] != "max":
+        if v.x >= 1e-6 and v.varName[0] == 'C' and v.varName[2] != 'm':
             j = int(v.varName.split("_")[1])
             end = v.x
             start = end - p[j-1]
@@ -382,7 +382,7 @@ def M3_gurobi_gantt(model, p, J, m):
 
     # Cj 기반으로 스케줄 구성
     for v in model.getVars():
-        if v.x >= 1e-6 and v.varName[0] == 'C' and v.varName.split("_")[2] != "max":
+        if v.x >= 1e-6 and v.varName[0] == 'C' and v.varName[2] != 'm':
             j = int(v.varName.split("_")[1])
             end = v.x
             start = end - p[j-1]
@@ -535,7 +535,7 @@ def M4_gurobi_gantt(model, p, J, m):
 
     # Cj 기반으로 스케줄 구성
     for v in model.getVars():
-        if v.x >= 1e-6 and v.varName[0] == 'C' and v.varName.split("_")[2] != "max":
+        if v.x >= 1e-6 and v.varName[0] == 'C' and v.varName[2] != 'm':
             j = int(v.varName.split("_")[1])
             end = v.x
             start = end - p[j-1]
